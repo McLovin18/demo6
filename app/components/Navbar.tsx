@@ -1,9 +1,8 @@
 "use client";
 
-import React, { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import InfoSlider from "./InfoSlider";
 import { collection, onSnapshot } from "firebase/firestore";
 import { db } from "../lib/firebase";
 import {
@@ -204,7 +203,7 @@ return (
               className="hidden lg:flex items-center leading-none"
             >
               <Image
-                src="/logo_demo3.png"
+                src="/logo_demo6.png"
                 alt="logo"
                 width={190}
                 height={60}
@@ -221,7 +220,7 @@ return (
               className="pointer-events-auto flex flex-col items-center leading-none"
             >
               <Image
-                src="/logo_demo3.png"
+                src="/logo_demo6.png"
                 alt="Logo"
                 width={180}
                 height={62}
@@ -431,7 +430,7 @@ return (
                 className="font-bold text-base"
                 style={{ color: "#ffffff", letterSpacing: "0.08em" }}
               >
-                Something blue Studio
+                In My Wardrobe
               </span>
               <button
                 onClick={() => setMobileOpen(false)}

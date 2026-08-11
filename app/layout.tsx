@@ -17,9 +17,9 @@ export const revalidate = 1800;
 // Cambiar cuando tengas el dominio definitivo
 const SITE_URL =
   process.env.NEXT_PUBLIC_SITE_URL ||
-  "https://somethingbluestudio.com";
+  "https://imwec.com";
 
-const SITE_NAME = "Something Blue | Diseño Gráfico, Eventos y Branding Ecuador";
+const SITE_NAME = "IMW - In My Wardrobe | Ropa Importada de USA en Ecuador";
 
 const sourceSerif4 = Source_Serif_4({
   subsets: ["latin"],
@@ -30,26 +30,26 @@ const sourceSerif4 = Source_Serif_4({
 
 export const metadata: Metadata = {
   title: {
-    default: "Something Blue | Diseño Gráfico, Eventos y Branding en Ecuador",
-    template: "%s | Something Blue",
+    default: "IMW - In My Wardrobe | Ropa Importada de USA en Ecuador",
+    template: "%s | IMW",
   },
 
   description:
-    "Events & Branding, productos únicos y personalizados. Personalizamos productos para todos tus eventos, con envíos a todo el Ecuador.",
+    "Productos originales importados desde USA. Tienda 100% online, sin local físico, con envíos a todo el Ecuador por Servientrega.",
 
   keywords: [
-    "diseño gráfico Ecuador",
-    "branding para eventos Ecuador",
-    "productos personalizados Ecuador",
-    "gift shop Ecuador",
-    "regalos personalizados eventos",
-    "decoración de eventos Ecuador",
-    "Something Blue",
-    "Paula Ferretti diseño",
-    "productos para bodas Ecuador",
-    "papelería personalizada Ecuador",
-    "branding de marca Ecuador",
-    "diseño de eventos Ecuador",
+    "ropa importada USA Ecuador",
+    "tienda online ropa Ecuador",
+    "IMW In My Wardrobe",
+    "productos originales importados",
+    "moda importada Guayaquil",
+    "ropa original USA",
+    "tienda de ropa online Ecuador",
+    "envíos Servientrega Ecuador",
+    "compras online ropa Ecuador",
+    "moda Guayaquil online",
+    "outfits importados Ecuador",
+    "ropa auténtica USA",
   ],
 
   creator: SITE_NAME,
@@ -72,17 +72,17 @@ export const metadata: Metadata = {
     url: SITE_URL,
     siteName: SITE_NAME,
 
-    title: "Something Blue | Diseño Gráfico, Eventos y Branding",
+    title: "IMW - In My Wardrobe | Ropa Importada de USA",
 
     description:
-      "Events & Branding, productos únicos y personalizados. Personalizamos productos para todos tus eventos, con envíos a todo el Ecuador.",
+      "Productos originales importados desde USA. Tienda 100% online, con envíos a todo el Ecuador por Servientrega.",
 
     images: [
       {
         url: `${SITE_URL}/og-image.jpg`,
         width: 1200,
         height: 630,
-        alt: "Something Blue - Diseño Gráfico y Branding",
+        alt: "IMW - In My Wardrobe",
       },
     ],
   },
@@ -90,10 +90,10 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
 
-    title: "Something Blue",
+    title: "IMW - In My Wardrobe",
 
     description:
-      "Events & Branding, productos únicos y personalizados con envíos a todo el Ecuador.",
+      "Ropa y productos originales importados desde USA, con envíos a todo el Ecuador.",
 
     images: [`${SITE_URL}/twitter-image.jpg`],
   },
@@ -125,7 +125,7 @@ export const metadata: Metadata = {
     title: SITE_NAME,
   },
 
-  category: "Diseño y Eventos",
+  category: "Moda y Ropa",
 };
 
 export const viewport: Viewport = {
