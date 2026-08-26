@@ -242,22 +242,22 @@ export default function CartPage() {
 
   const EmptyCart = () => (
     <div className="flex flex-col items-center justify-center py-20 gap-4 text-center">
-      <div className="w-20 h-20 rounded-full bg-[#0a0a0a] border border-white/10 flex items-center justify-center">
-        <span className="material-icons-round text-4xl text-white/40">
+      <div className="w-20 h-20 rounded-full bg-[#F8F7F4] border border-[#C8A96B]/30 flex items-center justify-center">
+        <span className="material-icons-round text-4xl text-[#667085]">
           shopping_bag
         </span>
       </div>
       <div>
-        <h3 className="text-lg font-semibold text-white">
+        <h3 className="text-lg font-semibold text-[#151515]">
           Tu carrito está vacío
         </h3>
-        <p className="text-sm text-white/50 mt-1">
+        <p className="text-sm text-[#667085] mt-1">
           Agrega productos para continuar
         </p>
       </div>
       <a
         href="/products-by-category"
-        className="mt-2 inline-flex items-center gap-2 text-white bg-black border border-white/15 hover:border-[#7B9BC0] hover:shadow-md font-semibold px-6 py-2.5 rounded-xl transition-colors shadow"
+        className="mt-2 inline-flex items-center gap-2 text-white bg-[#071A2B] border border-[#C8A96B] hover:border-[#C8A96B] hover:shadow-md font-semibold px-6 py-2.5 rounded-xl transition-colors shadow"
       >
         <span className="material-icons-round text-white text-base">storefront</span>
         Ver productos
@@ -267,14 +267,14 @@ export default function CartPage() {
 
   return (
     <>
-      <div className="min-h-screen text-white transition-colors">
+      <div className="min-h-screen text-[#151515] transition-colors bg-white">
         <main className="max-w-6xl mx-auto px-3 sm:px-6 py-6 sm:py-10">
           <div className="flex items-center gap-3 mb-6">
-            <h1 className="text-2xl sm:text-3xl font-bold text-white">
+            <h1 className="text-2xl sm:text-3xl font-bold text-[#151515]">
               Carrito
             </h1>
             {carrito.length > 0 && (
-              <span className="bg-black border border-white/15 text-white text-xs font-bold px-2.5 py-1 rounded-full">
+              <span className="bg-[#C8A96B] border border-[#071A2B] text-[#071A2B] text-xs font-bold px-2.5 py-1 rounded-full">
                 {carrito.length} {carrito.length === 1 ? "producto" : "productos"}
               </span>
             )}
@@ -302,7 +302,7 @@ export default function CartPage() {
                   return (
                     <div
                       key={itemKey}
-                      className="bg-black rounded-2xl border border-[#7B9BC0] shadow-sm p-4 flex gap-3 sm:gap-4 items-start"
+                      className="bg-[#F8F7F4] rounded-2xl border border-[#C8A96B] shadow-sm p-4 flex gap-3 sm:gap-4 items-start"
                     >
                       <div className="w-16 h-16 sm:w-20 sm:h-20 shrink-0 rounded-xl overflow-hidden bg-[var(--muted)] border border-[var(--border)] flex items-center justify-center">
                         <img
@@ -338,7 +338,7 @@ export default function CartPage() {
                         {/* Personalización */}
                         {personalizacionFields.length > 0 && (
                           <div className="mt-1.5 rounded-lg border p-2 flex flex-col gap-0.5"
-                            style={{ borderColor: "red", background: "black" }}>
+                            style={{ borderColor: "#C8A96B", background: "#F8F7F4" }}>
                             <span className="text-[10px] font-semibold uppercase tracking-wide flex items-center gap-1"
                               style={{ color: "var(--textSecondary)" }}>
                               <span className="material-icons-round text-xs">auto_awesome</span>
@@ -398,7 +398,7 @@ export default function CartPage() {
                         </span>
                         <button
                           onClick={() => removeCarrito(itemKey)}
-                          className="text-[var(--textSecondary)] hover:text-[#7B9BC0] transition-colors"
+                          className="text-[var(--textSecondary)] hover:text-[#C8A96B] transition-colors"
                           title="Eliminar"
                         >
                           <span className="material-icons-round text-xl">delete_outline</span>
@@ -411,7 +411,7 @@ export default function CartPage() {
 
                 <a
                   href="/products-by-category"
-                  className="inline-flex items-center gap-1.5 text-sm text-white hover:text-[#7B9BC0] hover:underline mt-1 transition-colors"
+                  className="inline-flex items-center gap-1.5 text-sm text-[#151515] hover:text-[#C8A96B] hover:underline mt-1 transition-colors"
                 >
                   <span className="material-icons-round text-base">arrow_back</span>
                   Continuar comprando
@@ -419,11 +419,11 @@ export default function CartPage() {
               </div>
 
               <div className="lg:col-span-1">
-                <div className="bg-[#0a0a0a] rounded-2xl border border-white/10 shadow-md p-5 md:sticky md:top-20 space-y-4">
+                <div className="bg-[#F8F7F4] rounded-2xl border border-[#C8A96B]/30 shadow-md p-5 md:sticky md:top-20 space-y-4">
                                     <div>
-                    <p className="text-base font-bold mb-3 text-white">Resumen del pedido</p>
+                    <p className="text-base font-bold mb-3 text-[#151515]">Resumen del pedido</p>
                     <div className="space-y-1.5">
-                      <div className="flex justify-between text-sm text-white">
+                      <div className="flex justify-between text-sm text-[#151515]">
                         <span>
                           Subtotal ({carrito.reduce((n, p) => n + (p.cantidad || 1), 0)} items)
                         </span>
@@ -431,16 +431,16 @@ export default function CartPage() {
                       </div>
 
                     </div>
-                    <div className="border-t border-[#7B9BC0] mt-3 pt-3 flex justify-between font-bold text-base">
-                      <span className="text-white">Total</span>
-                      <span className="text-white">${total.toFixed(2)}</span>
+                    <div className="border-t border-[#C8A96B] mt-3 pt-3 flex justify-between font-bold text-base">
+                      <span className="text-[#151515]">Total</span>
+                      <span className="text-[#151515]">${total.toFixed(2)}</span>
                     </div>
                   </div>
 
                   <div className="space-y-2.5">
                     <button
                       onClick={handleGenerarOrden}
-                      className="w-full flex items-center justify-center gap-2 py-3.5 px-6 bg-[#7B9BC0] hover:bg-[#7B9BC0] text-white font-extrabold text-sm rounded-xl transition-colors shadow-md"
+                      className="w-full flex items-center justify-center gap-2 py-3.5 px-6 bg-[#C8A96B] hover:bg-[#A88A55] text-white font-extrabold text-sm rounded-xl transition-colors shadow-md"
                       title="Enviar pedido por WhatsApp"
                     >
                       <span className="material-icons-round text-base">chat</span>
@@ -449,7 +449,7 @@ export default function CartPage() {
 
                     <button
                       onClick={handleAbrirTransferencia}
-                      className="w-full flex items-center justify-center gap-2 py-3.5 px-6 bg-black border border-white/15 hover:border-[#7B9BC0] text-white font-bold text-sm rounded-xl transition-colors"
+                      className="w-full flex items-center justify-center gap-2 py-3.5 px-6 bg-[#071A2B] border border-[#C8A96B] hover:border-[#D4BA85] text-white font-bold text-sm rounded-xl transition-colors"
                       title="Pagar el 30% inicial por transferencia bancaria"
                     >
                       <span className="material-icons-round text-base">account_balance</span>

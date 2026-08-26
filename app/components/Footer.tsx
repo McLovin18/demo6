@@ -66,7 +66,7 @@ const Footer: React.FC = () => {
 
   return (
     <>
-      <footer className=" border-t border-white/10 text-white">
+      <footer className={styles.pdxFooter + " border-t border-white/10 text-white"}>
         <div className={styles.ftGlowLeft} />
 
         <div className={styles.ftGlowLeft} />
@@ -116,7 +116,7 @@ const Footer: React.FC = () => {
                     <li key={label}>
                       <a
                         href={href}
-                        className="flex items-center justify-center w-9 h-9 rounded-full border border-white/15 text-white transition-colors hover:bg-[#2C4870] hover:border-[#2C4870]"
+                        className="flex items-center justify-center w-9 h-9 rounded-full border border-white/15 text-white transition-colors hover:bg-[#C8A96B] hover:border-[#C8A96B]"
                         target="_blank"
                         rel="noreferrer"
                         title={label}
@@ -142,7 +142,7 @@ const Footer: React.FC = () => {
                 href={`https://wa.me/${WHATSAPP_NUMBER}`}
                 target="_blank"
                 rel="noreferrer"
-                className="flex items-center gap-2 text-xl text-white/70 hover:text-[#2C4870] transition-colors"
+                className="flex items-center gap-2 text-xl text-white/70 hover:text-[#C8A96B] transition-colors"
                 onClick={() => trackLinkClick().catch(console.error)}
               >
                 <span>{WHATSAPP_DISPLAY}</span>
@@ -163,7 +163,7 @@ const Footer: React.FC = () => {
           </p>
           <div className={styles.ftCopyRight}>
             <div className="flex items-center gap-1.5 text-xs text-white/60">
-              <div className="w-1.5 h-1.5 rounded-full bg-[#2C4870]" />
+              <div className="w-1.5 h-1.5 rounded-full bg-[#C8A96B]" />
               Hecho en Ecuador
             </div>
 
@@ -171,7 +171,7 @@ const Footer: React.FC = () => {
               href="https://www.instagram.com/hector.cobena/"
               target="_blank"
               rel="noreferrer"
-              className="text-xs text-white/50 hover:text-[#2C4870] transition-colors"
+              className="text-xs text-white/50 hover:text-[#C8A96B] transition-colors"
               onClick={() => trackLinkClick().catch(console.error)}
             >
               Desarrollado por Héctor Cobeña

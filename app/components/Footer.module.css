@@ -1,6 +1,6 @@
 .pdxFooter {
-  background: var(--primary);
-  color: var(--primaryForeground);
+  background: var(--color-navy-premium);
+  color: var(--color-white);
   position: relative;
   overflow: hidden;
 }

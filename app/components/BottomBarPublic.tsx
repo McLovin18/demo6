@@ -15,8 +15,8 @@ export default function BottomBarPublic() {
 
   return (
     <nav
-      className="lg:hidden fixed bottom-0 left-0 w-full border-t flex z-50 bg-black"
-      style={{borderColor: "var(--border)" }}
+      className="lg:hidden fixed bottom-0 left-0 w-full border-t flex z-50 text-white"
+      style={{backgroundColor: "var(--color-navy-premium)", borderColor: "var(--border)" }}
     >
       <ul className="flex w-full justify-between items-center" style={{ color: "#ffffff" }}>
         {publicItems.map((item) => {
@@ -49,10 +49,10 @@ export default function BottomBarPublic() {
                         fontSize: cartCount > 99 ? 8 : 10,
                         lineHeight: 1,
                         borderRadius: 999,
-                        background: "red",
-                        color: "var(--secondaryForeground)",
+                        background: "var(--color-gold-premium)",
+                        color: "var(--color-navy-premium)",
                         // Borde que separa del ícono
-                        outline: "2px solid #000000",
+                        outline: "2px solid var(--color-navy-premium)",
                         // Pulso sutil cuando hay items
                         animation: "badgePop 0.35s cubic-bezier(0.34,1.56,0.64,1) both",
                         zIndex: 10,

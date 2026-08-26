@@ -17,7 +17,7 @@ export default function BottomBar({ role = "admin" }) {
   const items = adminItems;
   const { carrito } = useUser();
   return (
-    <nav className="lg:hidden bg-black fixed bottom-0 left-0 w-full flex overflow-x-auto z-50" style={{borderColor: "var(--border)", borderTop: "1px solid var(--border)" }}>
+    <nav className="lg:hidden fixed bottom-0 left-0 w-full flex overflow-x-auto z-50 text-white" style={{backgroundColor: "var(--color-navy-premium)", borderColor: "var(--border)", borderTop: "1px solid var(--border)" }}>
       <ul className="flex w-full justify-between items-center">
         {items.map((item) => (
           <li key={item.path} className="flex-1">

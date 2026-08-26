@@ -245,13 +245,13 @@ export default function SearchResultsPage() {
       const paginatedProducts = productosFiltrados.slice((currentPage - 1) * productsPerPage, currentPage * productsPerPage);
 
   return (
-    <div className="min-h-screen flex flex-col transition-colors bg-black text-white">
+    <div className="min-h-screen flex flex-col transition-colors bg-white text-[#151515]">
       <BottomBarPublic/>
 
       <main className="max-w-7xl mx-auto w-full px-3 sm:px-5 py-6 sm:py-15 flex-1">
         {queryParam && (
-          <p className="text-sm text-white/50 mb-4">
-            Resultados para <span className="text-white font-semibold">"{queryParam}"</span>
+          <p className="text-sm text-[#667085] mb-4">
+            Resultados para <span className="text-[#151515] font-semibold">"{queryParam}"</span>
           </p>
         )}
 

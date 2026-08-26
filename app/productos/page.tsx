@@ -379,8 +379,8 @@ export default function ProductosPage() {
                   onClick={selectTodas}
                   className={`px-4 py-2 rounded-full whitespace-nowrap font-medium text-sm transition-all ${
                     !categoria
-                      ? "shadow-sm scale-105 bg-red-600 text-white border border-red-600"
-                      : "bg-white text-slate-900 border border-slate-300 hover:border-red-600/60 hover:shadow-sm"
+                      ? "shadow-sm scale-105 bg-[#071A2B] text-white border border-[#071A2B]"
+                      : "bg-white text-slate-900 border border-slate-300 hover:border-[#071A2B]/60 hover:shadow-sm"
                   }`}
                 >
                   Todas
@@ -406,8 +406,8 @@ export default function ProductosPage() {
                       }}
                       className={`px-4 py-2 rounded-full whitespace-nowrap font-medium text-sm transition-all ${
                         sameCategoryId(categoria, cat.id)
-                          ? "shadow-sm scale-105 bg-red-600 text-white border border-red-600"
-                          : "bg-white text-slate-900 border border-slate-300 hover:border-red-600/60 hover:shadow-sm"
+                          ? "shadow-sm scale-105 bg-[#071A2B] text-white border border-[#071A2B]"
+                          : "bg-white text-slate-900 border border-slate-300 hover:border-[#071A2B]/60 hover:shadow-sm"
                       }`}
                     >
                       {cat.icono && <span className="mr-1">🏷️</span>}
@@ -434,7 +434,7 @@ export default function ProductosPage() {
                             }}
                             className={`block w-full text-left px-4 py-2 text-sm transition-colors ${
                               subcategoria === sub.id
-                                ? "bg-red-600 text-white"
+                                ? "bg-[#071A2B] text-white"
                                 : "text-slate-900 hover:bg-slate-100"
                             }`}
                           >
@@ -486,7 +486,7 @@ export default function ProductosPage() {
                     }}
                     className={`block w-full text-left px-4 py-2 text-sm transition-colors ${
                       subcategoria === sub.id
-                        ? "bg-red-600 text-white"
+                        ? "bg-[#071A2B] text-white"
                         : "text-slate-900 hover:bg-slate-100"
                     }`}
                   >
@@ -562,14 +562,14 @@ export default function ProductosPage() {
                 {Array.from({ length: totalPages }, (_, i) => i + 1).map((n) => (
                   <button
                     key={n}
-                    className={`px-3 py-1.5 rounded border text-xs font-medium transition-all ${currentPage === n ? "bg-red-600 border-red-600 text-white shadow-sm" : "bg-white border-slate-300 text-slate-900 hover:border-red-600/60"}`}
+                    className={`px-3 py-1.5 rounded border text-xs font-medium transition-all ${currentPage === n ? "bg-[#071A2B] border-[#071A2B] text-white shadow-sm" : "bg-white border-slate-300 text-slate-900 hover:border-[#071A2B]/60"}`}
                     onClick={() => setCurrentPage(n)}
                   >
                     {n}
                   </button>
                 ))}
                 <button
-                  className="px-3 py-1.5 rounded border text-xs font-medium bg-white border-slate-300 text-slate-900 hover:border-red-600/60 transition-all disabled:opacity-40"
+                  className="px-3 py-1.5 rounded border text-xs font-medium bg-white border-slate-300 text-slate-900 hover:border-[#071A2B]/60 transition-all disabled:opacity-40"
                   onClick={() => setCurrentPage((p) => Math.min(totalPages, p + 1))}
                   disabled={currentPage === totalPages}
                 >

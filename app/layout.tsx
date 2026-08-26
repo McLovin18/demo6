@@ -175,9 +175,6 @@ export default function RootLayout({
 
       <body className="relative min-h-screen">
 
-        {/* Capa oscura */}
-        <div className="fixed inset-0 -z-10 bg-black/45" />
-
         <ToastProvider>
           <OnboardingProvider>
             <LayoutContentClient>

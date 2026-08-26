@@ -417,7 +417,7 @@ const movePriceBelowCart =
 
 
 return (
-    <div className="min-h-screen flex flex-col mt- text-white transition-colors">
+    <div className="min-h-screen flex flex-col mt- text-[#151515] transition-colors bg-white">
       <BottomBarPublic/>
 
       <div className="max-w-5xl mx-auto w-full px-3 sm:px-6 py-6 sm:py-10">
@@ -431,9 +431,9 @@ return (
           >
             
           {/* Imagen principal */}
-          <div className="relative aspect-square rounded-2xl overflow-hidden backdrop-blur-sm border border-white/10">
+          <div className="relative aspect-square rounded-2xl overflow-hidden backdrop-blur-sm border border-[#C8A96B]/30">
             {hasDiscount && (
-              <span className="absolute top-3 left-3 z-10 bg-[#7B9BC0] text-white text-xs font-bold px-2 py-0.5 rounded-full">
+              <span className="absolute top-3 left-3 z-10 bg-[#C8A96B] text-white text-xs font-bold px-2 py-0.5 rounded-full">
                 -{discount}%
               </span>
             )}
@@ -451,7 +451,7 @@ return (
             {producto.imagenes.length > 1 && imgIdx > 0 && (
               <button
                 onClick={() => setImgIdx(imgIdx - 1)}
-                className="absolute left-2 top-1/2 -translate-y-1/2 w-8 h-8 rounded-full bg-[#141313] border border-white/15 shadow flex items-center justify-center hover:scale-105 hover:border-[#7B9BC0] transition-all"
+                className="absolute left-2 top-1/2 -translate-y-1/2 w-8 h-8 rounded-full bg-[#071A2B] border border-[#C8A96B]/30 shadow flex items-center justify-center hover:scale-105 hover:border-[#C8A96B] transition-all"
               >
                 <span className="material-icons-round text-white/70 text-lg">chevron_left</span>
               </button>
@@ -459,7 +459,7 @@ return (
             {producto.imagenes.length > 1 && imgIdx < producto.imagenes.length - 1 && (
               <button
                 onClick={() => setImgIdx(imgIdx + 1)}
-                className="absolute right-2 top-1/2 -translate-y-1/2 w-8 h-8 rounded-full bg-[#141313] border border-white/15 shadow flex items-center justify-center hover:scale-105 hover:border-[#7B9BC0] transition-all"
+                className="absolute right-2 top-1/2 -translate-y-1/2 w-8 h-8 rounded-full bg-[#071A2B] border border-[#C8A96B]/30 shadow flex items-center justify-center hover:scale-105 hover:border-[#C8A96B] transition-all"
               >
                 <span className="material-icons-round text-white/70 text-lg">chevron_right</span>
               </button>
@@ -473,9 +473,9 @@ return (
                   <button
                     key={idx}
                     onClick={() => setImgIdx(idx)}
-                    className={`flex-shrink-0 w-16 h-16 rounded-xl overflow-hidden border-2 transition-all bg-black/30 backdrop-blur-sm ${
+                    className={`flex-shrink-0 w-16 h-16 rounded-xl overflow-hidden border-2 transition-all bg-[#F8F7F4] backdrop-blur-sm ${
                       imgIdx === idx
-                        ? "border-[#7B9BC0] scale-105"
+                        ? "border-[#C8A96B] scale-105"
                         : "border-transparent opacity-50 hover:opacity-80"
                     }`}
                   >
@@ -496,8 +496,8 @@ return (
                     onClick={() => handleTabToggle("caracteristicas")}
                     className={`flex-1 flex items-center justify-center gap-2 py-2.5 text-sm font-semibold transition-all ${
                       activeTab === "caracteristicas"
-                            ? "bg-[#7B9BC0] text-white"
-                            : ": bg-black/30 backdrop-blur-sm text-white hover:bg-white/10"
+                            ? "bg-[#C8A96B] text-white"
+                            : ": bg-[#F8F7F4] backdrop-blur-sm text-[#151515] hover:bg-[#E8E4DC]"
                     }`}
                   >
                     <span className="material-icons-round text-[16px]">list_alt</span>
@@ -507,11 +507,11 @@ return (
                 <button
                   onClick={() => handleTabToggle("resenas")}
                   className={`flex-1 flex items-center justify-center gap-2 py-2.5 text-sm font-semibold transition-all ${
-                    hasCaracteristicas ? "border-l border-white/10" : ""
+                    hasCaracteristicas ? "border-l border-[#C8A96B]/30" : ""
                   } ${
                     activeTab === "resenas"
-                            ? "bg-[#7B9BC0] text-white"
-                            : "bg-black/30 backdrop-blur-sm text-white hover:bg-white/10"
+                            ? "bg-[#C8A96B] text-white"
+                            : "bg-[#F8F7F4] backdrop-blur-sm text-[#151515] hover:bg-[#E8E4DC]"
                   }`}
                 >
                   <span className="material-icons-round text-[16px]">star_outline</span>
@@ -530,14 +530,14 @@ return (
 
               {/* Panel de contenido del tab activo */}
               {activeTab && (
-                <div className="border border-t-0 border-white/10 rounded-b-xl px-4 py-4 bg-black/30 backdrop-blur-sm">
+                <div className="border border-t-0 border-[#C8A96B]/30 rounded-b-xl px-4 py-4 bg-[#F8F7F4] backdrop-blur-sm">
 
                   {/* Panel: Características */}
                   {activeTab === "caracteristicas" && hasCaracteristicas && (
                     <ul className="space-y-2">
                       {producto.caracteristicas.map((c, idx) => (
-                        <li key={idx} className="flex items-start gap-2.5 text-sm text-white/80">
-                          <span className="w-1 h-1 rounded-full bg-[#7B9BC0] mt-2 flex-shrink-0" />
+                        <li key={idx} className="flex items-start gap-2.5 text-sm text-[#151515]">
+                          <span className="w-1 h-1 rounded-full bg-[#C8A96B] mt-2 flex-shrink-0" />
                           <Markdown>{c}</Markdown>
                         </li>
                       ))}
@@ -563,13 +563,13 @@ return (
             {/* Nombre + SKU */}
             <div>
               <h1
-                className="text-2xl sm:text-3xl font-bold leading-tight text-white break-words max-w-full whitespace-pre-line"
+                className="text-2xl sm:text-3xl font-bold leading-tight text-[#151515] break-words max-w-full whitespace-pre-line"
                 style={{ wordBreak: "break-word", maxWidth: "100%" }}
                 title={producto.nombre}
               >
                 {producto.nombre}
               </h1>
-              <p className="text-xs text-white/30 mt-1.5">
+              <p className="text-xs text-[#667085] mt-1.5">
                 SKU: {producto.sku || producto.id}
               </p>
             </div>
@@ -578,9 +578,9 @@ return (
             {reviews.length > 0 && (
               <div className="flex items-center gap-1.5">
                 {Array.from({ length: 5 }).map((_, i) => (
-                  <span key={i} className={`text-base ${i < Math.round(avgRating) ? "text-[#7B9BC0]" : "text-white/10"}`}>★</span>
+                  <span key={i} className={`text-base ${i < Math.round(avgRating) ? "text-[#C8A96B]" : "text-[#667085]/30"}`}>★</span>
                 ))}
-                <span className="text-xs text-white/40 ml-1">
+                <span className="text-xs text-[#667085] ml-1">
                   {avgRating.toFixed(1)} ({reviews.length})
                 </span>
               </div>
@@ -590,17 +590,17 @@ return (
             {!movePriceBelowCart && (
               <div className="flex items-baseline gap-3 flex-wrap">
                 {hasDiscount && (
-                  <span className="text-sm text-white/30 line-through">
+                  <span className="text-sm text-[#667085] line-through">
                     ${(fakeOldPrice * cantidad).toFixed(2)}
                   </span>
                 )}
 
-                <span className="text-3xl font-extrabold text-white">
+                <span className="text-3xl font-extrabold text-[#151515]">
                   ${(finalPrice * cantidad).toFixed(2)}
                 </span>
 
                 {hasDiscount && (
-                  <span className="text-xs font-semibold text-[#7B9BC0] bg-red-500/10 px-2 py-0.5 rounded-full">
+                  <span className="text-xs font-semibold text-[#C8A96B] bg-[#C8A96B]/10 px-2 py-0.5 rounded-full">
                     {discount}% OFF
                   </span>
                 )}
@@ -609,12 +609,12 @@ return (
             )}
 
             {priceAffectingField && (
-              <div className="rounded-xl border border-white/10 bg-white/[0.03] px-3 py-2 text-xs text-white/65">
+              <div className="rounded-xl border border-[#C8A96B]/30 bg-[#F8F7F4] px-3 py-2 text-xs text-[#667085]">
                 {!personalizacionValues[priceAffectingField.id]?.trim() && (
                   <p>El precio base corresponde a la medida estandar de 150x100 cm. Escribe una medida como 150x100 cm para recalcular.</p>
                 )}
                 {measurePricing?.error && (
-                  <p className="text-[#7B9BC0]">{measurePricing.error}</p>
+                  <p className="text-[#C8A96B]">{measurePricing.error}</p>
                 )}
                 {measurePricing?.isValid && (
                   <p className="text-emerald-400">
@@ -671,17 +671,17 @@ return (
                   `,
                 }}
               >
-                <h3 className="text-sm font-bold mb-3 flex items-center gap-2 text-[#7B9BC0]">
+                <h3 className="text-sm font-bold mb-3 flex items-center gap-2 text-[#C8A96B]">
                   <span className="material-icons-round text-base">auto_awesome</span>
                   Personalización
                 </h3>
                 <div className="space-y-3">
                   {(producto as any).camposPersonalizacion.map((campo: any) => (
                     <div key={campo.id}>
-                      <label className="block text-xs font-bold mb-1.5 text-white">
+                      <label className="block text-xs font-bold mb-1.5 text-[#151515]">
                         {campo.nombre}
                         {campo.ejemplo && (
-                          <span className="text-white font-bold"> (Ej. {campo.ejemplo})</span>
+                          <span className="text-[#151515] font-bold"> (Ej. {campo.ejemplo})</span>
                         )}
                       </label>
                       {campo.afectaPrecio ? (
@@ -692,10 +692,10 @@ return (
                             onChange={(e) => setPersonalizacionValues(prev => ({ ...prev, [campo.id]: e.target.value }))}
                             placeholder="150x100 cm"
                             className={`w-full rounded-xl border-none px-4 py-3.5 text-base outline-none focus:ring-2 focus:ring-amber-300 bg-white text-black placeholder:text-black/45 ${
-                              measurePricing?.error ? "ring-2 ring-[#7B9BC0]" : ""
+                              measurePricing?.error ? "ring-2 ring-[#C8A96B]" : ""
                             }`}
                           />
-                          <p className={`mt-1.5 text-xs ${measurePricing?.error ? "text-[#7B9BC0]" : "text-white/55"}`}>
+                          <p className={`mt-1.5 text-xs ${measurePricing?.error ? "text-[#C8A96B]" : "text-[#667085]"}`}>
                             {measurePricing?.error || "Formato requerido: ancho x alto. Ejemplo: 150x100 cm."}
                           </p>
                         </>
@@ -733,27 +733,27 @@ return (
             {/* Cantidad */}
             {maxCantidad > 0 && (
               <div className="flex items-center gap-3 flex-wrap">
-                <span className="text-xs text-white/40 font-medium">Cantidad:</span>
-                <div className="flex items-center bg-[#0a0a0a] rounded-xl p-1 gap-1">
+                <span className="text-xs text-[#667085] font-medium">Cantidad:</span>
+                <div className="flex items-center bg-[#F8F7F4] rounded-xl p-1 gap-1 border border-[#C8A96B]/30">
                   <button
                     onClick={() => setCantidad((v) => Math.max(1, v - 1))}
-                    className="w-8 h-8 rounded-lg flex items-center justify-center text-white/60 hover:bg-white/10 font-bold text-lg transition-colors"
+                    className="w-8 h-8 rounded-lg flex items-center justify-center text-[#151515] hover:bg-[#E8E4DC] font-bold text-lg transition-colors"
                   >−</button>
-                  <span className="w-9 text-center text-sm font-semibold text-white">
+                  <span className="w-9 text-center text-sm font-semibold text-[#151515]">
                     {cantidad}
                   </span>
                   <button
                     onClick={() => setCantidad((v) => Math.min(maxCantidad, v + 1))}
-                    className="w-8 h-8 rounded-lg flex items-center justify-center text-white/60 hover:bg-white/10 font-bold text-lg transition-colors"
+                    className="w-8 h-8 rounded-lg flex items-center justify-center text-[#151515] hover:bg-[#E8E4DC] font-bold text-lg transition-colors"
                   >+</button>
                 </div>
                 {priceAffectingField && measurePricing?.isValid && !measurePricing?.error && (
-                  <label className="flex items-center gap-2 text-xl text-white/70 select-none">
+                  <label className="flex items-center gap-2 text-xl text-[#151515] select-none">
                     <input
                       type="checkbox"
                       checked={altoRelieve}
                       onChange={(e) => setAltoRelieve(e.target.checked)}
-                      className="w-4 h-4 accent-[#7B9BC0]"
+                      className="w-4 h-4 accent-[#C8A96B]"
                     />
                     desea agregar alto relieve al cuadro?
                   </label>
@@ -768,10 +768,10 @@ return (
                 disabled={maxCantidad === 0 || (hasVariations && variationAttributeIds.length > 0 && !variationAttributeIds.every(attrId => selectedVariations[attrId]))}
                 className={`flex-1 flex items-center justify-center gap-2 py-3 rounded-xl text-sm font-bold border transition-all ${
                   maxCantidad === 0 || (hasVariations && variationAttributeIds.length > 0 && !variationAttributeIds.every(attrId => selectedVariations[attrId]))
-                    ? "bg-black text-white/20 border-white/10 cursor-not-allowed opacity-50 shadow-none"
+                    ? "bg-[#667085] text-white/20 border-[#667085]/30 cursor-not-allowed opacity-50 shadow-none"
                     : inCart
-                      ? "bg-[#7B9BC0] text-white border-[#7B9BC0] hover:bg-[#7B9BC0] hover:shadow-md"
-                      : "bg-[#7B9BC0] text-white border-[#7B9BC0] hover:bg-[#7B9BC0] hover:shadow-md"
+                      ? "bg-[#C8A96B] text-white border-[#C8A96B] hover:bg-[#A88A55] hover:shadow-md"
+                      : "bg-[#C8A96B] text-white border-[#C8A96B] hover:bg-[#A88A55] hover:shadow-md"
                 }`}
               >
                 <span className="material-icons-round text-[18px]">
@@ -785,8 +785,8 @@ return (
                   onClick={handleFav}
                   className={`w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0 transition-all ${
                     isFav
-                      ? "bg-[#7B9BC0] text-white shadow"
-                      : "bg-black border border-white/15 text-white hover:border-[#7B9BC0] hover:text-[#7B9BC0] hover:shadow-sm"
+                      ? "bg-[#C8A96B] text-white shadow"
+                      : "bg-[#071A2B] border border-[#C8A96B] text-white hover:border-[#D4BA85] hover:text-[#D4BA85] hover:shadow-sm"
                   }`}
                   title={isFav ? "Quitar de favoritos" : "Agregar a favoritos"}
                 >
@@ -800,17 +800,17 @@ return (
             {movePriceBelowCart && (
               <div className="flex items-baseline gap-3 flex-wrap mt-2">
                 {hasDiscount && (
-                  <span className="text-sm text-white/30 line-through">
+                  <span className="text-sm text-[#667085] line-through">
                     ${(fakeOldPrice * cantidad).toFixed(2)}
                   </span>
                 )}
 
-                <span className="text-3xl font-extrabold text-white">
+                <span className="text-3xl font-extrabold text-[#151515]">
                   ${(finalPrice * cantidad).toFixed(2)}
                 </span>
 
                 {hasDiscount && (
-                  <span className="text-xs font-semibold text-[#7B9BC0] bg-red-500/10 px-2 py-0.5 rounded-full">
+                  <span className="text-xs font-semibold text-[#C8A96B] bg-[#C8A96B]/10 px-2 py-0.5 rounded-full">
                     {discount}% OFF
                   </span>
                 )}
@@ -819,19 +819,19 @@ return (
             )}
             {/* Descripción debajo de Añadir al carrito */}
             <div className="mt-6">
-              <h2 className="text-lg font-semibold mb-2 text-white">Descripción del producto</h2>
+              <h2 className="text-lg font-semibold mb-2 text-[#151515]">Descripción del producto</h2>
               {rawDescripcion.trim() ? (
                 descItems.length > 0 && (descItems.length > 1 || descItems[0].sub.length > 0 || descItems[0].text !== rawDescripcion.trim()) ? (
                   <ul className="space-y-2">
                     {descItems.map((item, idx) => (
-                      <li key={idx} className="flex gap-2 text-sm text-white/80 leading-relaxed">
-                        <span className="text-[#7B9BC0] flex-shrink-0 mt-0.5">›</span>
+                      <li key={idx} className="flex gap-2 text-sm text-[#151515] leading-relaxed">
+                        <span className="text-[#C8A96B] flex-shrink-0 mt-0.5">›</span>
                         <span>
                           {item.text}
                           {item.sub.length > 0 && (
                             <ul className="mt-1 space-y-0.5 ml-3">
                               {item.sub.map((s, j) => (
-                                <li key={j} className="flex gap-1.5 text-white/40">
+                                <li key={j} className="flex gap-1.5 text-[#667085]">
                                   <span className="flex-shrink-0">–</span>{s}
                                 </li>
                               ))}
@@ -842,26 +842,26 @@ return (
                     ))}
                   </ul>
                 ) : (
-                  <p className="text-sm text-white/80 leading-relaxed whitespace-pre-line">{rawDescripcion}</p>
+                  <p className="text-sm text-[#151515] leading-relaxed whitespace-pre-line">{rawDescripcion}</p>
                 )
               ) : (
-                <p className="text-sm text-white/40">Sin descripción</p>
+                <p className="text-sm text-[#667085]">Sin descripción</p>
               )}
             </div>
 
             {/* Descripción */}
             {descItems.length > 0 && (
               <ul className="space-y-2">
-                <h1 className="text-white">Descripción:</h1>
+                <h1 className="text-[#151515]">Descripción:</h1>
                 {descItems.map((item, idx) => (
-                  <li key={idx} className="flex gap-2 text-sm text-white/80 leading-relaxed">
-                    <span className="text-[#7B9BC0] flex-shrink-0 mt-0.5">›</span>
+                  <li key={idx} className="flex gap-2 text-sm text-[#151515] leading-relaxed">
+                    <span className="text-[#C8A96B] flex-shrink-0 mt-0.5">›</span>
                     <span>
                       {item.text}
                       {item.sub.length > 0 && (
                         <ul className="mt-1 space-y-0.5 ml-3">
                           {item.sub.map((s, j) => (
-                            <li key={j} className="flex gap-1.5 text-white/40">
+                            <li key={j} className="flex gap-1.5 text-[#667085]">
                               <span className="flex-shrink-0">–</span>{s}
                             </li>
                           ))}
@@ -881,14 +881,14 @@ return (
         {/* ── TABS móvil: debajo de info, encima de relacionados ── */}
         {!isVisualOnlyProduct && (
         <div className="md:hidden mt-4 flex flex-col gap-0">
-          <div className="flex rounded-xl overflow-hidden border border-white/10">
+          <div className="flex rounded-xl overflow-hidden border border-[#C8A96B]/30">
             {hasCaracteristicas && (
               <button
                 onClick={() => handleTabToggle("caracteristicas")}
                 className={`flex-1 flex items-center justify-center gap-2 py-2.5 text-sm font-semibold transition-all ${
                   activeTab === "caracteristicas"
-                    ? "bg-[#7B9BC0] text-white"
-                    : "bg-black text-white/70 hover:bg-white/5"
+                    ? "bg-[#C8A96B] text-white"
+                    : "bg-[#102A43] text-white/70 hover:bg-[#071A2B]"
                 }`}
               >
                 <span className="material-icons-round text-[16px]">list_alt</span>
@@ -898,11 +898,11 @@ return (
             <button
               onClick={() => handleTabToggle("resenas")}
               className={`flex-1 flex items-center justify-center gap-2 py-2.5 text-sm font-semibold transition-all ${
-                hasCaracteristicas ? "border-l border-white/10" : ""
+                hasCaracteristicas ? "border-l border-[#C8A96B]/30" : ""
               } ${
                 activeTab === "resenas"
-                  ? "bg-[#7B9BC0] text-white"
-                  : "bg-black text-white/70 hover:bg-white/5"
+                  ? "bg-[#C8A96B] text-white"
+                  : "bg-[#102A43] text-white/70 hover:bg-[#071A2B]"
               }`}
             >
               <span className="material-icons-round text-[16px]">star_outline</span>

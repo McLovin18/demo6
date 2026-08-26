@@ -2,72 +2,71 @@
 
 :root {
   /* ============================================================
-     PALETA DE COLORES — Floristería
-     Fondo    #0A0A0A (negro, fijo por requerimiento del cliente)
-     Fern     #3A5A40  (verde botánico — hojas / tallos)
-     Terracota#8C4A3A  (acento floral apagado, sin caer en rosado)
-     Gold     #C9A227  (detalle premium — precios, líneas, hover)
-     Bone     #EDE7DA  (texto principal sobre negro)
-     Stone    #9C9488  (texto secundario)
-     Charcoal #1A1A1A  (superficies / cards sobre el negro puro)
+     PALETA DE COLORES — Premium Navy & Gold
+     Azul marino premium      #071A2B (Navy profundo)
+     Azul secundario          #102A43 (Midnight Blue)
+     Fondo principal          #FFFFFF (Blanco)
+     Fondo alternativo        #F8F7F4 (Blanco cálido)
+     Texto                    #151515 (Negro suave)
+     Texto secundario         #667085 (Gris elegante)
+     Detalle premium          #C8A96B (Dorado champagne)
      ============================================================ */
 
   /* --- Colores base de la paleta (para uso directo si se necesita) --- */
-  --color-black: black;
-  --color-fern: #3a5a40;
-  --color-terracota: #5e1919;
-  --color-gold: #5e1919;
-  --color-bone: #ede7da;
-  --color-stone: #5e1919;
-  --color-charcoal: #1a1a1a;
+  --color-navy-premium: #071A2B;
+  --color-navy-secondary: #102A43;
+  --color-white: #FFFFFF;
+  --color-warm-white: #F8F7F4;
+  --color-text-primary: #151515;
+  --color-text-secondary: #667085;
+  --color-gold-premium: #C8A96B;
 
   /* --- Variantes derivadas (hover / active) --- */
-  --color-fern-dark: #2a4230;       /* fern oscurecido, hover en botones verdes */
-  --color-terracota-dark: #411010;  /* terracota oscurecido, hover en acentos florales */
-  --color-gold-dark: #852323;       /* gold oscurecido, hover en botones dorados */
-  --color-bone-dark: #d9d0ba;       /* bone oscurecido, hover sobre superficies claras */
-  --color-gold-muted: #560f0f;      /* gold muy oscurecido/desaturado — fondo navbar/footer, no compite con el negro */
-  --color-gold-muted-hover: #661111; /* variante un poco más clara para hover/active sobre el navbar */
+  --color-navy-premium-dark: #05121F;       /* navy premium oscurecido */
+  --color-navy-secondary-dark: #0C1E33;    /* navy secondary oscurecido */
+  --color-gold-premium-dark: #A88A55;       /* gold oscurecido, hover en botones dorados */
+  --color-gold-premium-light: #D4BA85;      /* gold aclarado */
+  --color-navy-muted: #0A2438;              /* navy muy oscurecido — fondo navbar/footer */
+  --color-navy-muted-hover: #0D2A42;        /* variante un poco más clara para hover/active sobre el navbar */
 
   /* --- Semántica --- */
-/* --- Semántica --- */
-   --background: #000000;
+  --background: var(--color-white);
+  --foreground: var(--color-text-primary);
 
-  --bg: black;
-  --bgSecondary: #ffffff;
+  --bg: var(--color-white);
+  --bgSecondary: var(--color-warm-white);
 
-
-  --border: #d1d5db;
+  --border: #C8A96B;
 
   /* --- Colores de marca / acción --- */
-  --primary: var(--color-gold);
-  --primaryHover: var(--color-gold-dark);
-  --primaryForeground: var(--color-black);
+  --primary: var(--color-gold-premium);
+  --primaryHover: var(--color-gold-premium-dark);
+  --primaryForeground: var(--color-navy-premium);
 
-  --secondary: var(--color-fern);
-  --secondaryHover: var(--color-fern-dark);
-  --secondaryForeground: var(--color-bone);
+  --secondary: var(--color-navy-premium);
+  --secondaryHover: var(--color-navy-premium-dark);
+  --secondaryForeground: var(--color-white);
 
-  --accent: var(--color-terracota);
-  --accentForeground: var(--color-bone);
+  --accent: var(--color-navy-secondary);
+  --accentForeground: var(--color-white);
 
-  --muted: var(--color-charcoal);
-  --mutedForeground: var(--color-stone);
+  --muted: var(--color-warm-white);
+  --mutedForeground: var(--color-text-secondary);
 
   --card: var(--color-white);
-  --cardForeground: var(--color-bone);
+  --cardForeground: var(--color-text-primary);
 
-  --galleryImgBg: var(--color-white);
+  --galleryImgBg: var(--color-warm-white);
 
-  /* --- Navbar / Footer (dorado oscurecido, no compite con el fondo negro) --- */
-  --navbarBg: var(--color-gold-muted);
-  --navbarBgHover: var(--color-gold-muted-hover);
-  --navbarText: var(--color-bone);
-  --navbarTextMuted: var(--color-gold);
+  /* --- Navbar / Footer (azul navy premium, elegante y profesional) --- */
+  --navbarBg: var(--color-navy-premium);
+  --navbarBgHover: var(--color-navy-premium-dark);
+  --navbarText: var(--color-white);
+  --navbarTextMuted: var(--color-gold-premium);
 
-  --footerBg: var(--color-gold-muted);
-  --footerText: var(--color-bone);
-  --footerTextMuted: var(--color-stone);
+  --footerBg: var(--color-navy-premium);
+  --footerText: var(--color-white);
+  --footerTextMuted: var(--color-gold-premium);
 
   /* --- Tipografía --- */
   --font-body-family: "Open Sauce One", sans-serif;
@@ -108,7 +107,7 @@
 
 body {
   background: var(--background);
-  color: var(--foreground);
+  color: var(--color-text-primary);
   font-family: var(--font-body-family);
   font-style: var(--font-body-style);
   font-weight: var(--font-body-weight);

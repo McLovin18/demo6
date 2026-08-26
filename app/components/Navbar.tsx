@@ -14,17 +14,17 @@ import { useUser } from "../context/UserContext";
 import { productMatches } from "../lib/search-utils";
 
 // ─────────────────────────────────────────────
-// Paleta de marca — Tienda Virtual
+// Paleta de marca — Tienda Virtual (Premium Navy & Gold)
 // ─────────────────────────────────────────────
 const BRAND = {
-  bg: "#000000",
-  bgSoft: "#0a0a0a",
-  gold: "#e11d1d",
-  goldBright: "#ff3b3b",
-  border: "rgba(255,255,255,0.1)",
-  borderSoft: "rgba(255,255,255,0.08)",
+  bg: "#071A2B",
+  bgSoft: "#102A43",
+  gold: "#C8A96B",
+  goldBright: "#D4BA85",
+  border: "rgba(200, 169, 107, 0.3)",
+  borderSoft: "rgba(200, 169, 107, 0.2)",
   white: "#ffffff",
-  textMuted: "rgba(255,255,255,0.5)",
+  textMuted: "rgba(255,255,255,0.7)",
 };
 
 
@@ -145,8 +145,8 @@ return (
     <>
 
       <nav
-        className="sticky top-0 z-40 border-b py-3 px-2 shadow-sm bg-black text-white"
-        style={{ borderColor: BRAND.border }}
+        className="sticky top-0 z-40 border-b py-3 px-2 shadow-sm text-white"
+        style={{ backgroundColor: BRAND.bg, borderColor: BRAND.border }}
       >
         {/* ── Header principal ── */}
         <div
@@ -245,12 +245,12 @@ return (
               ) : (
                 <form
                   className="absolute right-0 top-full mt-2 w-[min(75vw,300px)] md:w-[min(92vw,420px)] rounded-2xl border shadow-2xl z-50 overflow-hidden"
-                  style={{ background: "#000000", borderColor: "rgba(255,255,255,0.15)" }}
+                  style={{ background: "#102A43", borderColor: "rgba(200,169,107,0.3)" }}
                   onSubmit={(e) => { e.preventDefault(); handleSearch(); }}
                 >
                   <div
                     className="flex items-center gap-2 px-3 py-2 border-b"
-                    style={{ background: "#0a0a0a", borderColor: "rgba(255,255,255,0.08)" }}
+                    style={{ background: "#071A2B", borderColor: "rgba(200,169,107,0.2)" }}
                   >
                     <span className="material-icons-round text-lg" style={{ color: "rgba(255,255,255,0.5)" }}>
                       search
@@ -260,7 +260,7 @@ return (
                       type="text"
                       placeholder="Buscar un producto..."
                       className="bg-transparent outline-none text-sm flex-1 text-body"
-                      style={{ color: "black", minWidth: 140 }}
+                      style={{ color: "white", minWidth: 140 }}
                       autoComplete="off"
                       value={searchValue}
                       onChange={(e) => setSearchValue(e.target.value)}
@@ -372,7 +372,7 @@ return (
                 {userMenu && (
                   <div
                     className="absolute right-0 mt-2 w-48 rounded-2xl border shadow-xl overflow-hidden z-50"
-                    style={{ background: "#000000", borderColor: "rgba(255,255,255,0.15)" }}
+                    style={{ background: "#102A43", borderColor: "rgba(200,169,107,0.3)" }}
                   >
                   <a
                       href="/admin/perfil"
@@ -418,7 +418,7 @@ return (
         >
           <div
             className="absolute left-0 top-0 w-[85vw] max-w-xs max-h-[calc(100vh-80px)] overflow-y-auto shadow-2xl flex flex-col"
-            style={{ background: "#000000", color: "#ffffff" }}
+            style={{ background: "#102A43", color: "#ffffff" }}
             onClick={(e) => e.stopPropagation()}
           >
             {/* Header drawer */}
@@ -462,7 +462,7 @@ return (
                   type="text"
                   placeholder="Buscar productos..."
                   className="bg-transparent outline-none text-sm flex-1"
-                  style={{ color: "black" }}
+                  style={{ color: "white" }}
                   value={searchValue}
                   onChange={(e) => setSearchValue(e.target.value)}
                   autoComplete="off"
@@ -472,7 +472,7 @@ return (
                   <div
                     className="absolute left-0 top-full mt-1 w-full rounded-xl border shadow-xl z-50 overflow-hidden"
                     style={{
-                      background: "#000000",
+                      background: "#102A43",
                       borderColor: BRAND.border,
                       maxHeight: 300,
                       overflowY: "auto",
