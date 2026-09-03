@@ -17,14 +17,14 @@ import { productMatches } from "../lib/search-utils";
 // Paleta de marca — Tienda Virtual (Premium Navy & Gold)
 // ─────────────────────────────────────────────
 const BRAND = {
-  bg: "#071A2B",
-  bgSoft: "#102A43",
+  bg: "#FFFFFF",
+  bgSoft: "#F8F7F4",
   gold: "#C8A96B",
   goldBright: "#D4BA85",
   border: "rgba(200, 169, 107, 0.3)",
   borderSoft: "rgba(200, 169, 107, 0.2)",
-  white: "#ffffff",
-  textMuted: "rgba(255,255,255,0.7)",
+  white: "#151515",
+  textMuted: "rgba(21, 21, 21, 0.7)",
 };
 
 
@@ -145,8 +145,8 @@ return (
     <>
 
       <nav
-        className="sticky top-0 z-40 border-b py-3 px-2 shadow-sm text-white"
-        style={{ backgroundColor: BRAND.bg, borderColor: BRAND.border }}
+        className="sticky top-0 z-40 border-b py-3 px-2 shadow-sm"
+        style={{ backgroundColor: BRAND.bg, borderColor: BRAND.border, color: BRAND.white }}
       >
         {/* ── Header principal ── */}
         <div
@@ -161,14 +161,15 @@ return (
             py-2
           "
           style={{ color: BRAND.white }}
-        > 
+        >
           {/* ── Izquierda: botones inicio, productos── */}
           <div className="hidden lg:flex items-center justify-start gap-1">
             {links.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
-                className="px-3 py-2 rounded-xl text-sm font-medium text-white hover:bg-white/10"
+                className="px-3 py-2 rounded-xl text-sm font-medium hover:bg-[#F8F7F4]/10"
+                style={{ color: BRAND.white }}
               >
                 {link.label}
               </Link>
@@ -188,14 +189,14 @@ return (
     p-2
     rounded-xl
     transition-colors
-    hover:bg-white/10
+    hover:bg-[#F8F7F4]/10
     flex
     items-center
     justify-center"
               onClick={() => setMobileOpen(true)}
               aria-label="Abrir menú"
             >
-              <span className="material-icons-round text-2xl text-white">menu</span>
+              <span className="material-icons-round text-2xl" style={{ color: BRAND.white }}>menu</span>
             </button>
 
             <a
@@ -203,7 +204,7 @@ return (
               className="hidden lg:flex items-center leading-none"
             >
               <Image
-                src="/logo_demo6.png"
+                src="/logo_na.png"
                 alt="logo"
                 width={190}
                 height={60}
@@ -220,7 +221,7 @@ return (
               className="pointer-events-auto flex flex-col items-center leading-none"
             >
               <Image
-                src="/logo_demo6.png"
+                src="/logo_na.png"
                 alt="Logo"
                 width={180}
                 height={62}
@@ -236,23 +237,24 @@ return (
               {!searchOpen ? (
                 <button
                   type="button"
-                  className="flex items-center justify-center w-10 h-10 rounded-xl transition-colors text-white hover:bg-white/10"
+                  className="flex items-center justify-center w-10 h-10 rounded-xl transition-colors hover:bg-[#F8F7F4]/10"
+                  style={{ color: BRAND.white }}
                   onClick={() => setSearchOpen(true)}
                   aria-label="Buscar"
                 >
-                  <span className="material-icons-round text-2xl">search</span>
+                  <span className="material-icons-round text-2xl" style={{ color: BRAND.white }}>search</span>
                 </button>
               ) : (
                 <form
                   className="absolute right-0 top-full mt-2 w-[min(75vw,300px)] md:w-[min(92vw,420px)] rounded-2xl border shadow-2xl z-50 overflow-hidden"
-                  style={{ background: "#102A43", borderColor: "rgba(200,169,107,0.3)" }}
+                  style={{ background: "#FFFFFF", borderColor: "#C8A96B" }}
                   onSubmit={(e) => { e.preventDefault(); handleSearch(); }}
                 >
                   <div
                     className="flex items-center gap-2 px-3 py-2 border-b"
-                    style={{ background: "#071A2B", borderColor: "rgba(200,169,107,0.2)" }}
+                    style={{ background: "#F8F7F4", borderColor: "#C8A96B" }}
                   >
-                    <span className="material-icons-round text-lg" style={{ color: "rgba(255,255,255,0.5)" }}>
+                    <span className="material-icons-round text-lg" style={{ color: "#667085" }}>
                       search
                     </span>
                     <input
@@ -260,7 +262,7 @@ return (
                       type="text"
                       placeholder="Buscar un producto..."
                       className="bg-transparent outline-none text-sm flex-1 text-body"
-                      style={{ color: "white", minWidth: 140 }}
+                      style={{ color: "#151515", minWidth: 140 }}
                       autoComplete="off"
                       value={searchValue}
                       onChange={(e) => setSearchValue(e.target.value)}
@@ -272,8 +274,8 @@ return (
                         setSuggestions([]);
                         setSearchOpen(false);
                       }}
-                      className="rounded-full p-1 transition-colors hover:bg-white/10"
-                      style={{ color: "rgba(255,255,255,0.5)" }}
+                      className="rounded-full p-1 transition-colors hover:bg-[#F8F7F4]/10"
+                      style={{ color: "#667085" }}
                       aria-label="Cerrar búsqueda"
                     >
                       <span className="material-icons-round text-base">close</span>
@@ -294,8 +296,8 @@ return (
                             <a
                               key={prod.id}
                               href={href}
-                              className="flex items-center gap-3 px-4 py-2.5 transition-colors text-sm hover:bg-white/5 text-body"
-                              style={{ color: "#ffffff" }}
+                              className="flex items-center gap-3 px-4 py-2.5 transition-colors text-sm hover:bg-[#F8F7F4]/5 text-body"
+                              style={{ color: "#151515" }}
                               onMouseDown={(e) => e.preventDefault()}
                               onClick={() => {
                                 setSearchOpen(false);
@@ -331,11 +333,12 @@ return (
             <div className="relative flex flex-col items-center">
             <a
                 href={user ? "/admin/cart" : "/cart"}
-                className="flex items-center justify-center px-1 rounded-xl transition-colors text-white hover:bg-white/10"
+                className="flex items-center justify-center px-1 rounded-xl transition-colors hover:bg-[#F8F7F4]/10"
+                style={{ color: BRAND.white }}
                 aria-label="Carrito"
                 data-onboarding="carrito"
               >
-                <span className="material-icons-round text-xl">shopping_cart</span>
+                <span className="material-icons-round text-xl" style={{ color: BRAND.white }}>shopping_cart</span>
                 {carrito && carrito.length > 0 && (
                   <span
                     className="absolute -top-2 -right-2 text-[10px] font-bold rounded-full w-5 h-5 flex items-center justify-center border-2 z-10"
@@ -363,7 +366,7 @@ return (
                       style={{ borderColor: BRAND.gold }}
                     />
                   ) : (
-                    <span className="material-icons-round text-3xl text-white">
+                    <span className="material-icons-round text-3xl" style={{ color: BRAND.white }}>
                       account_circle
                     </span>
                   )}
@@ -372,25 +375,27 @@ return (
                 {userMenu && (
                   <div
                     className="absolute right-0 mt-2 w-48 rounded-2xl border shadow-xl overflow-hidden z-50"
-                    style={{ background: "#102A43", borderColor: "rgba(200,169,107,0.3)" }}
+                    style={{ background: "#FFFFFF", borderColor: "#C8A96B" }}
                   >
                   <a
                       href="/admin/perfil"
-                      className="flex items-center gap-2 px-4 py-3 text-sm transition-colors text-white hover:bg-white/5 text-body"
+                      className="flex items-center gap-2 px-4 py-3 text-sm transition-colors hover:bg-[#F8F7F4]/5 text-body"
+                      style={{ color: "#151515" }}
                     >
-                      <span className="material-icons-round text-base">person_outline</span>
+                      <span className="material-icons-round text-base" style={{ color: "#151515" }}>person_outline</span>
                       Perfil
                     </a>
                     <a
                       href="/admin/config"
-                      className="flex items-center gap-2 px-4 py-3 text-sm transition-colors text-white hover:bg-white/5 text-body"
+                      className="flex items-center gap-2 px-4 py-3 text-sm transition-colors hover:bg-[#F8F7F4]/5 text-body"
+                      style={{ color: "#151515" }}
                     >
-                      <span className="material-icons-round text-base">tune</span>
+                      <span className="material-icons-round text-base" style={{ color: "#151515" }}>tune</span>
                       Configuración
                     </a>
-                    <div className="border-t" style={{ borderColor: "rgba(255,255,255,0.15)" }} />
+                    <div className="border-t" style={{ borderColor: "#C8A96B" }} />
                     <button
-                      className="w-full flex items-center gap-2 px-4 py-3 text-sm text-left text-red-500 font-medium transition-colors hover:bg-white/5 text-body"
+                      className="w-full flex items-center gap-2 px-4 py-3 text-sm text-left text-red-500 font-medium transition-colors hover:bg-[#F8F7F4]/5 text-body"
                       onClick={async () => {
                         const { logoutUser } = await import("../lib/firebase-auth");
                         await logoutUser();
@@ -428,16 +433,16 @@ return (
             >
               <span
                 className="font-bold text-base"
-                style={{ color: "#ffffff", letterSpacing: "0.08em" }}
+                style={{ color: "#151515", letterSpacing: "0.08em" }}
               >
-                In My Wardrobe
+                N A L A
               </span>
               <button
                 onClick={() => setMobileOpen(false)}
-                className="p-1.5 rounded-xl transition-colors hover:bg-white/10"
-                style={{ color: "#ffffff" }}
+                className="p-1.5 rounded-xl transition-colors hover:bg-[#F8F7F4]/10"
+                style={{ color: "#151515" }}
               >
-                <span className="material-icons-round text-xl">close</span>
+                <span className="material-icons-round text-xl" style={{ color: "#151515" }}>close</span>
               </button>
             </div>
  
@@ -454,7 +459,7 @@ return (
                   }
                 }}
               >
-                <span className="material-icons-round text-lg" style={{ color: "#ffffff" }}>
+                <span className="material-icons-round text-lg" style={{ color: "#667085" }}>
                   search
                 </span>
                 <input
@@ -462,7 +467,7 @@ return (
                   type="text"
                   placeholder="Buscar productos..."
                   className="bg-transparent outline-none text-sm flex-1"
-                  style={{ color: "white" }}
+                  style={{ color: "#151515" }}
                   value={searchValue}
                   onChange={(e) => setSearchValue(e.target.value)}
                   autoComplete="off"
@@ -472,8 +477,8 @@ return (
                   <div
                     className="absolute left-0 top-full mt-1 w-full rounded-xl border shadow-xl z-50 overflow-hidden"
                     style={{
-                      background: "#102A43",
-                      borderColor: BRAND.border,
+                      background: "#FFFFFF",
+                      borderColor: "#C8A96B",
                       maxHeight: 300,
                       overflowY: "auto",
                     }}
@@ -490,8 +495,8 @@ return (
                           <a
                             key={prod.id}
                             href={href}
-                            className="flex items-center gap-3 px-4 py-2.5 transition-colors text-sm hover:bg-white/5"
-                            style={{ color: "#ffffff" }}
+                            className="flex items-center gap-3 px-4 py-2.5 transition-colors text-sm hover:bg-[#F8F7F4]/5"
+                            style={{ color: "#151515" }}
                             onMouseDown={(e) => e.preventDefault()}
                             onClick={() => {
                               setMobileOpen(false);
@@ -527,8 +532,8 @@ return (
               <a
                 key={link.href}
                 href={link.href}
-                className="flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm font-medium transition-colors hover:bg-white/10"
-                style={{ color: "#ffffff" }}
+                className="flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm font-medium transition-colors hover:bg-[#F8F7F4]/10"
+                style={{ color: "#151515" }}
                 onClick={() => setMobileOpen(false)}
               >
                 {link.label}
@@ -541,7 +546,7 @@ return (
                 <div className="border-t my-2" style={{ borderColor: BRAND.border }} />
                 <span
                   className="px-3 pb-1 text-xs font-semibold uppercase tracking-wider"
-                  style={{ color: "rgba(255,255,255,0.45)" }}
+                  style={{ color: "rgba(21,21,21,0.45)" }}
                 >
                   Categorías
                 </span>
@@ -549,8 +554,8 @@ return (
                 <a
                     key={cat.id}
                     href={`${basePath}?cat=${cat.id}`}
-                    className="flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm font-medium transition-colors hover:bg-white/10"
-                    style={{ color: "#ffffff" }}
+                    className="flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm font-medium transition-colors hover:bg-[#F8F7F4]/10"
+                    style={{ color: "#151515" }}
                     onClick={() => setMobileOpen(false)}
                   >
                     {cat.icono && (
@@ -570,22 +575,22 @@ return (
                 <>
                   <a
                     href="/admin/perfil"
-                    className="flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm transition-colors hover:bg-white/10"
-                    style={{ color: "#ffffff" }}
+                    className="flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm transition-colors hover:bg-[#F8F7F4]/10"
+                    style={{ color: "#151515" }}
                   >
-                    <span className="material-icons-round text-base">person</span>
+                    <span className="material-icons-round text-base" style={{ color: "#151515" }}>person</span>
                     Perfil
                   </a>
                   <a
                     href="/admin/config"
-                    className="flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm transition-colors hover:bg-white/10"
-                    style={{ color: "#ffffff" }}
+                    className="flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm transition-colors hover:bg-[#F8F7F4]/10"
+                    style={{ color: "#151515" }}
                   >
-                    <span className="material-icons-round text-base">settings</span>
+                    <span className="material-icons-round text-base" style={{ color: "#151515" }}>settings</span>
                     Configuración
                   </a>
                   <button
-                    className="flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm text-left text-red-500 font-medium transition-colors hover:bg-white/10"
+                    className="flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm text-left text-red-500 font-medium transition-colors hover:bg-[#F8F7F4]/10"
                     onClick={async () => {
                       const { logoutUser } = await import("../lib/firebase-auth");
                       await logoutUser();
@@ -593,7 +598,7 @@ return (
                       window.location.href = "/";
                     }}
                   >
-                    <span className="material-icons-round text-base">logout</span>
+                    <span className="material-icons-round text-base" style={{ color: "#151515" }}>logout</span>
                     Cerrar sesión
                   </button>
                 </>

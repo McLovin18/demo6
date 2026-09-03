@@ -15,10 +15,10 @@ export default function BottomBarPublic() {
 
   return (
     <nav
-      className="lg:hidden fixed bottom-0 left-0 w-full border-t flex z-50 text-white"
-      style={{backgroundColor: "var(--color-navy-premium)", borderColor: "var(--border)" }}
+      className="lg:hidden fixed bottom-0 left-0 w-full border-t flex z-50"
+      style={{backgroundColor: "#FFFFFF", borderColor: "var(--border)", color: "#151515"}}
     >
-      <ul className="flex w-full justify-between items-center" style={{ color: "#ffffff" }}>
+      <ul className="flex w-full justify-between items-center" style={{ color: "#151515" }}>
         {publicItems.map((item) => {
           const isCart = item.icon === "shopping_bag" || item.icon === "shopping_cart";
           const showBadge = isCart && cartCount > 0;
@@ -28,11 +28,11 @@ export default function BottomBarPublic() {
               <a
                 href={item.path}
                 className="flex flex-col items-center py-2 px-2 transition-colors relative"
-                style={{ color: "#ffffff" }}
+                style={{ color: "#151515" }}
               >
                 {/* Ícono + badge */}
                 <span className="relative inline-flex items-center justify-center">
-                  <span className="material-icons-round text-lg">{item.icon}</span>
+                  <span className="material-icons-round text-lg" style={{ color: "#151515" }}>{item.icon}</span>
 
                   {showBadge && (
                     <span
@@ -50,9 +50,9 @@ export default function BottomBarPublic() {
                         lineHeight: 1,
                         borderRadius: 999,
                         background: "var(--color-gold-premium)",
-                        color: "var(--color-navy-premium)",
+                        color: "#151515",
                         // Borde que separa del ícono
-                        outline: "2px solid var(--color-navy-premium)",
+                        outline: "2px solid #FFFFFF",
                         // Pulso sutil cuando hay items
                         animation: "badgePop 0.35s cubic-bezier(0.34,1.56,0.64,1) both",
                         zIndex: 10,
@@ -63,7 +63,7 @@ export default function BottomBarPublic() {
                   )}
                 </span>
 
-                <span className="text-xs font-medium mt-0">{item.name}</span>
+                <span className="text-xs font-medium mt-0" style={{ color: "#151515" }}>{item.name}</span>
               </a>
             </li>
           );

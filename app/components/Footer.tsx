@@ -26,12 +26,12 @@ const IconWhatsApp = () => (
 );
 
 const socialLinks = [
-  { href: "https://www.instagram.com/imw_ec/", label: "Instagram", Icon: IconInstagram },
+  { href: "https://www.instagram.com/nalaocean.ec/", label: "Instagram", Icon: IconInstagram },
 ];
 
 // 👉 Información del negocio
-const WHATSAPP_NUMBER = "593978828553"; // solo números, con código de país, sin '+' ni espacios
-const WHATSAPP_DISPLAY = "+593 97 882 8553"; // como se muestra al usuario
+const WHATSAPP_NUMBER = "593985819555"; // solo números, con código de país, sin '+' ni espacios
+const WHATSAPP_DISPLAY = "+593 98 581 9555"; // como se muestra al usuario
 
 const Footer: React.FC = () => {
   const pathname = usePathname();
@@ -66,7 +66,7 @@ const Footer: React.FC = () => {
 
   return (
     <>
-      <footer className={styles.pdxFooter + " border-t border-white/10 text-white"}>
+      <footer className=" border-t border-white/10 bg-black text-white">
         <div className={styles.ftGlowLeft} />
 
         <div className={styles.ftGlowLeft} />
@@ -79,7 +79,7 @@ const Footer: React.FC = () => {
             {/* Columna 1: Información de la tienda */}
             <div className="flex flex-col items-center md:items-start text-center md:text-left gap-1">
               <span className="text-base font-bold tracking-wide text-white">
-                IMW <span className="text-white/50 font-normal">· In My Wardrobe</span>
+                NALA
               </span>
 
               {instagramEnabled && instagramFollowers !== null && instagramFollowers > 0 && (
@@ -92,11 +92,12 @@ const Footer: React.FC = () => {
               )}
 
               <div className="text-xs text-white/60 mt-1 max-w-[220px]">
-                <p>Productos originales importados desde USA</p>
-                <p>Tienda 100% online · Envíos por Servientrega</p>
+                <p>Eternal summer. Swimwear</p>
+                <p>Bikinis &amp; Trikinis sostenibles</p>
+                <p>Envíos a todo el Ecuador</p>
                 <p className="flex items-center gap-1 justify-center md:justify-start mt-0.5">
                   <IconLocation />
-                  Guayaquil · Envíos a todo el Ecuador
+                  Made in Ecuador
                 </p>
               </div>
             </div>
@@ -116,7 +117,7 @@ const Footer: React.FC = () => {
                     <li key={label}>
                       <a
                         href={href}
-                        className="flex items-center justify-center w-9 h-9 rounded-full border border-white/15 text-white transition-colors hover:bg-[#C8A96B] hover:border-[#C8A96B]"
+                        className="flex items-center justify-center w-9 h-9 rounded-full border border-white/15 text-white transition-colors hover:bg-[#FF3D8A] hover:border-[#FF3D8A] hover:text-black"
                         target="_blank"
                         rel="noreferrer"
                         title={label}
@@ -142,12 +143,13 @@ const Footer: React.FC = () => {
                 href={`https://wa.me/${WHATSAPP_NUMBER}`}
                 target="_blank"
                 rel="noreferrer"
-                className="flex items-center gap-2 text-xl text-white/70 hover:text-[#C8A96B] transition-colors"
+                className="flex items-center gap-2 text-xl text-white/70 hover:text-[#FF3D8A] transition-colors"
                 onClick={() => trackLinkClick().catch(console.error)}
               >
                 <span>{WHATSAPP_DISPLAY}</span>
                 <IconWhatsApp />
               </a>
+
             </div>
 
           </div>
@@ -159,11 +161,11 @@ const Footer: React.FC = () => {
         {/* Copyright row */}
         <div className={styles.ftCopyRow}>
           <p className="text-xs text-white/50">
-            © {new Date().getFullYear()} IMW - In My Wardrobe. Todos los derechos reservados.
+            © {new Date().getFullYear()} NALA. Todos los derechos reservados.
           </p>
           <div className={styles.ftCopyRight}>
             <div className="flex items-center gap-1.5 text-xs text-white/60">
-              <div className="w-1.5 h-1.5 rounded-full bg-[#C8A96B]" />
+              <div className="w-1.5 h-1.5 rounded-full bg-[#FF3D8A]" />
               Hecho en Ecuador
             </div>
 
@@ -171,7 +173,7 @@ const Footer: React.FC = () => {
               href="https://www.instagram.com/hector.cobena/"
               target="_blank"
               rel="noreferrer"
-              className="text-xs text-white/50 hover:text-[#C8A96B] transition-colors"
+              className="text-xs text-white/50 hover:text-[#FF3D8A] transition-colors"
               onClick={() => trackLinkClick().catch(console.error)}
             >
               Desarrollado por Héctor Cobeña
